@@ -52,16 +52,7 @@
 			mastercard_regex = new RegExp('^5$|^5[1-5][0-9]{0,14}$'),
 
 			// American Express
-			amex_regex = new RegExp('^3$|^3[47][0-9]{0,13}$'),
-
-			// Diners Club
-			diners_regex = new RegExp('^3$|^3[068]$|^3(?:0[0-5]|[68][0-9])[0-9]{0,11}$'),
-
-			//Discover
-			discover_regex = new RegExp('^6$|^6[05]$|^601[1]?$|^65[0-9][0-9]?$|^6(?:011|5[0-9]{2})[0-9]{0,12}$'),
-
-			//JCB
-			jcb_regex = new RegExp('^2[1]?$|^21[3]?$|^1[8]?$|^18[0]?$|^(?:2131|1800)[0-9]{0,11}$|^3[5]?$|^35[0-9]{0,14}$');
+			amex_regex = new RegExp('^3$|^3[47][0-9]{0,13}$')
 						
 		return this.each(function(){
 			// as the user types
@@ -90,28 +81,9 @@
 					$(logos_obj).removeClass('is_amex');
 				}
 
-				if ( cur_val.match(diners_regex) ) {
-					$(logos_obj).addClass('is_diners');
-				} else {
-					$(logos_obj).removeClass('is_diners');
-				}
-
-				if ( cur_val.match(discover_regex) ) {
-					$(logos_obj).addClass('is_discover');
-				} else {
-					$(logos_obj).removeClass('is_discover');
-				}
-
-				if ( cur_val.match(jcb_regex) ) {
-					$(logos_obj).addClass('is_jcb');
-				} else {
-					$(logos_obj).removeClass('is_jcb');
-				}
-
 				// if nothing is a hit we add a class to fade them all out
 				if ( cur_val != '' && !cur_val.match(visa_regex) && !cur_val.match(mastercard_regex)
-				 && !cur_val.match(amex_regex) && !cur_val.match(diners_regex) 
-				&& !cur_val.match(discover_regex) && !cur_val.match(jcb_regex)) {
+				 && !cur_val.match(amex_regex)) {
 					$(logos_obj).addClass('is_nothing');
 				} else {
 					$(logos_obj).removeClass('is_nothing');
@@ -120,3 +92,17 @@
 		});
 	};
 })( jQuery );
+
+    function space(el, after) {
+        after = after || 4;
+        var v = el.value.replace(/[^\dA-Z]/g, ''),
+            reg = new RegExp(".{" + after + "}","g")
+        el.value = v.replace(reg, function (a, b, c) {
+            return a + ' ';
+        });
+    }
+    
+    var el = document.getElementById('cc_number');
+    el.addEventListener('keyup', function () {
+        space(this, 4);
+    });
