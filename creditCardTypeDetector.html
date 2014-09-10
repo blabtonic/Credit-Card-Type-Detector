@@ -6,18 +6,19 @@
 	<script type="text/javascript" src="jquery.creditCardTypeDetector.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#checkout_card_number').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
+			$('#cc_number').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
 		});
 	</script>
 </head>
 
 <body>
-<input id="checkout_card_number" type="text" size="20" pattern="[0-9]*" autocomplete="off" class="stripe_card_number" required="required" />
+<input id="cc_number" type="text" size="20" pattern="[0-9]*" autocomplete="off" class="stripe_card_number" required="required" />
 
 <ul class="card_logos">
 	<li class="card_visa">Visa</li>
 	<li class="card_mastercard">Mastercard</li>
 	<li class="card_amex">American Express</li>
 </ul>
+<script type="text/javascript" src="spacemaker.js"></script>
 </body>
 </html>
