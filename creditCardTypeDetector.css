@@ -11,7 +11,7 @@ ul.card_logos {
 	overflow: hidden;
 	text-align: left;
 	text-indent: -999px;
-	background: url(sprite-cards.png) 0 0 no-repeat;
+	background: url(sprite-cards.png) 0 0 no-repeat; /* catalog/view/theme/gazal/image/sprite-cards.png */
 }
 
 .card_mastercard {

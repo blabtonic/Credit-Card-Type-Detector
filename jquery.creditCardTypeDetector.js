@@ -34,7 +34,12 @@
  * See accompanying files for HTML structure, CSS, and png of card logos.
  */
 
-
+// This section is needed to connect css .card_logos class with the html page
+$(document).ready(function(){
+			$('#cc_number').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
+		});
+		
+// This section is needed for the regular expression, logic section
 (function( $ ) {
 	$.fn.creditCardTypeDetector = function( options ) {
 		var settings = $.extend( {
@@ -93,6 +98,7 @@
 	};
 })( jQuery );
 
+// This section is needed for the 4 space for the cc_number text field
     function space(el, after) {
         after = after || 4;
         var v = el.value.replace(/[^\dA-Z]/g, ''),
@@ -106,3 +112,4 @@
     el.addEventListener('keyup', function () {
         space(this, 4);
     });
+
