@@ -34,10 +34,10 @@ ul.card_logos {
 	background-position: -660px 0;
 }
 
-.is_visa li, .is_mastercard li, .is_amex li, .is_discover li, .is_diners li, .is_jcb li, .is_nothing li {
+.is_visa li, .is_mastercard li, .is_amex li, .is_nothing li {
 	opacity: .2;
 }
 
-.is_visa li.card_visa, .is_mastercard li.card_mastercard, .is_amex li.card_amex, .is_discover li.card_discover, .is_diners li.card_diners, .is_jcb li.card_jcb {
+.is_visa li.card_visa, .is_mastercard li.card_mastercard, .is_amex li.card_amex {
 	opacity: 1;
 }
